@@ -89,6 +89,7 @@ for(fileName in fileNames){
     dataTable$date <- gsub("-", "", substr(dataTable$date, 3, 11))
     dataTable$time <- gsub(":", "", substr(dataTable$time, 0, 5))
     dataTable$datetime <- paste(dataTable$date,dataTable$time, sep = ",")
+    dataTable = dataTable[nrow(dataTable):1,]
   } else if (grepl('year', fileName, fixed=TRUE)){
     dataTable$date <- gsub("-", "", substr(dataTable$date, 3, 11))
     dataTable$time <- gsub(":", "", substr(dataTable$time, 0, 2))
